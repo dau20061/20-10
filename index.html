@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Tiệm Hoa Của Bé Iu - Món Quà 20/10 Cho Người Anh Thương Nhất ❤️</title>
+  <meta name="description" content="Tiệm hoa chỉ mở một ngày trong năm - Món quà 20/10 tặng người yêu với tương tác chọn hoa cắm bó và gửi gắm yêu thương.">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌸</text></svg>">
+
+  <!-- Google Fonts chuẩn y chang video TikTok -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,400&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- CSS Style -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Canvas hiệu ứng bụi sao và cánh hoa bay lãng mạn -->
+  <canvas id="ambient-canvas"></canvas>
+
+  <!-- Nút điều khiển âm nhạc nền hot trend -->
+  <div id="music-btn" class="floating-music-btn" title="Bật / Tắt nhạc nền">
+    <div class="music-disc-rotating">
+      <i class="fas fa-music"></i>
+    </div>
+    <span id="music-text" style="font-size: 0.85rem; font-weight: 600; color: #554446;">Bật nhạc chill</span>
+  </div>
+
+  <main class="app-viewport">
+
+    <!-- ========================================================
+         STEP 1: TIỆM HOA CỦA BÉ IU (NGOÀI PHỐ)
+         ======================================================== -->
+    <section id="scene-shop" class="scene-step active">
+      <div class="shop-hero-wrapper">
+        
+        <!-- Bên trái: Tiêu đề lớn -->
+        <div class="shop-left-content">
+          <div class="sub-header-date">
+            <span>20 THÁNG 10</span> • <span>MỘT NGÀY THẬT ĐẶC BIỆT</span>
+          </div>
+
+          <h1 class="shop-main-title">
+            Tiệm hoa<br>
+            chỉ mở<br>
+            <span class="highlight-script">một ngày</span><br>
+            trong năm.
+          </h1>
+
+          <p class="shop-sub-quote">
+            MỘT CHÚT HOA, MỘT CHÚT THƯƠNG, THẬT NHIỀU YÊU
+          </p>
+
+          <div id="btn-enter-shop-hint" class="shop-click-hint">
+            <i class="fas fa-bell"></i> Chạm vào chiếc chuông hoặc cánh cửa để bước vào...
+          </div>
+        </div>
+
+        <!-- Bên phải: Tiệm hoa minh họa SVG ấm áp có animation -->
+        <div class="shop-right-display">
+          <div id="facade-trigger" class="flower-shop-facade" title="Nhấp vào tiệm hoa để bước vào">
+            <svg class="shop-svg-house" viewBox="0 0 520 440" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="wallGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#fffcf7" />
+                  <stop offset="100%" stop-color="#f5ede0" />
+                </linearGradient>
+                <linearGradient id="roofGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#b4cfb0" />
+                  <stop offset="100%" stop-color="#8fae8a" />
+                </linearGradient>
+                <linearGradient id="pinkStripe" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#ff758c" />
+                  <stop offset="100%" stop-color="#e75480" />
+                </linearGradient>
+                <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+                  <feGaussianBlur stdDeviation="6" result="blur" />
+                  <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                </filter>
+              </defs>
+
+              <!-- Mái ngói trên cùng màu xanh rêu nhạt -->
+              <polygon points="40,115 480,115 440,80 80,80" fill="url(#roofGrad)" />
+              <rect x="70" y="75" width="380" height="8" rx="4" fill="#7d9d78" />
+
+              <!-- Thân tường tiệm hoa -->
+              <rect x="65" y="115" width="390" height="280" fill="url(#wallGradient)" rx="6" />
+
+              <!-- Bảng hiệu gỗ TIỆM HOA CỦA BÉ IU -->
+              <g class="shop-signboard">
+                <rect x="135" y="95" width="250" height="52" rx="6" fill="#fffdfa" stroke="#d5c4b1" stroke-width="2.5" />
+                <rect x="140" y="100" width="240" height="42" rx="4" fill="none" stroke="#e8ded2" stroke-width="1.5" />
+                <text x="260" y="123" font-family="'Playfair Display', serif" font-size="16" font-weight="700" fill="#4a3e40" text-anchor="middle" letter-spacing="2">TIỆM HOA CỦA BÉ IU</text>
+                <text x="260" y="137" font-family="'Quicksand', sans-serif" font-size="8.5" fill="#a8999b" text-anchor="middle" letter-spacing="2.5">FLOWERS & LITTLE LOVE NOTES</text>
+              </g>
+
+              <!-- Mái hiên sọc hồng trắng nổi bật (Awning) -->
+              <g>
+                <path d="M50,150 L470,150 L455,195 L65,195 Z" fill="#ffffff" />
+                <!-- Các sọc hồng -->
+                <polygon points="50,150 90,150 100,195 65,195" fill="url(#pinkStripe)" />
+                <polygon points="130,150 170,150 175,195 138,195" fill="url(#pinkStripe)" />
+                <polygon points="210,150 250,150 250,195 212,195" fill="url(#pinkStripe)" />
+                <polygon points="290,150 330,150 325,195 288,195" fill="url(#pinkStripe)" />
+                <polygon points="370,150 410,150 400,195 365,195" fill="url(#pinkStripe)" />
+                <polygon points="450,150 470,150 455,195 440,195" fill="url(#pinkStripe)" />
+                <!-- Diềm lượn sóng chân mái hiên -->
+                <path d="M65,195 Q80,210 95,195 Q115,210 135,195 Q155,210 175,195 Q195,210 215,195 Q235,210 255,195 Q275,210 295,195 Q315,210 335,195 Q355,210 375,195 Q395,210 415,195 Q435,210 455,195" fill="none" stroke="#e75480" stroke-width="4" />
+              </g>
+
+              <!-- Cửa sổ kính vòm bên trái -->
+              <g>
+                <path d="M100,310 L100,240 A55,55 0 0,1 210,240 L210,310 Z" fill="#d9e8dc" stroke="#8fae8a" stroke-width="5" />
+                <!-- Khung chia ô kính -->
+                <line x1="155" y1="185" x2="155" y2="310" stroke="#8fae8a" stroke-width="3" />
+                <line x1="100" y1="260" x2="210" y2="260" stroke="#8fae8a" stroke-width="3" />
+                <!-- Bậu cửa sổ & chậu hoa nhỏ -->
+                <rect x="90" y="310" width="130" height="12" rx="3" fill="#c49a6c" />
+                <rect x="110" y="295" width="90" height="16" rx="2" fill="#e8849b" />
+                <circle cx="125" cy="292" r="6" fill="#ff4d6d" />
+                <circle cx="145" cy="290" r="7" fill="#ff758c" />
+                <circle cx="165" cy="292" r="6" fill="#ffb3c1" />
+                <circle cx="185" cy="291" r="5" fill="#ff4d6d" />
+              </g>
+
+              <!-- Cửa ra vào chính tiệm hoa (Door Frame) -->
+              <g id="shop-door-group">
+                <!-- Lòng cửa bên trong phát sáng vàng ấm khi mở -->
+                <rect x="270" y="220" width="125" height="175" rx="4" fill="#ffeaa7" class="door-interior-glow" />
+                <!-- Bóng sàn và kệ hoa mờ bên trong tiệm -->
+                <ellipse cx="332" cy="385" rx="50" ry="8" fill="#ffd166" opacity="0.6" class="door-interior-glow" />
+
+                <!-- Khung cửa gỗ xanh rêu pastel -->
+                <rect x="265" y="215" width="135" height="180" rx="4" fill="none" stroke="#688f5d" stroke-width="6" />
+
+                <!-- 2 Bản lề kim loại màu vàng đồng cố định ở mép trái (x=270) -->
+                <rect x="268" y="240" width="4" height="12" rx="1" fill="#d4af37" />
+                <rect x="268" y="350" width="4" height="12" rx="1" fill="#d4af37" />
+
+                <!-- Cánh cửa xoay mở quanh bản lề mép trái (Door Leaf) -->
+                <g id="door-leaf-anim" class="door-leaf">
+                  <!-- Thân cánh cửa gỗ -->
+                  <rect x="270" y="220" width="125" height="175" rx="3" fill="#7da870" stroke="#5f8654" stroke-width="2" />
+                  <!-- Khung pano trên có ô kính vàng ấm -->
+                  <rect x="282" y="235" width="100" height="90" rx="3" fill="#fdf0cd" stroke="#5f8654" stroke-width="2" />
+                  <!-- Nan chia ô kính chữ thập -->
+                  <line x1="332" y1="235" x2="332" y2="325" stroke="#5f8654" stroke-width="1.5" />
+                  <line x1="282" y1="280" x2="382" y2="280" stroke="#5f8654" stroke-width="1.5" />
+                  <!-- Tấm biển gỗ Welcome / OPEN treo trên cửa -->
+                  <rect x="302" y="268" width="60" height="22" rx="3" fill="#ffffff" stroke="#cbb9a3" stroke-width="1.5" />
+                  <text x="332" y="283" font-family="'Quicksand', sans-serif" font-size="9" font-weight="700" fill="#e75480" text-anchor="middle">OPEN ♡</text>
+                  <!-- Tay nắm cửa tròn mạ vàng đồng ở mép PHẢI (đối diện bản lề trái) -->
+                  <circle cx="380" cy="315" r="5" fill="#f4c430" stroke="#b8860b" stroke-width="1.2" />
+                  <rect x="375" y="318" width="10" height="3" rx="1" fill="#b8860b" />
+                </g>
+
+                <!-- Chuông cửa treo bên cạnh cánh cửa -->
+                <g class="door-bell-interactive" id="door-bell-btn">
+                  <line x1="412" y1="230" x2="412" y2="245" stroke="#999" stroke-width="2" />
+                  <path d="M404,255 C404,246 420,246 420,255 Z" fill="#f4c430" stroke="#b8860b" stroke-width="1.5" />
+                  <circle cx="412" cy="258" r="2.5" fill="#8b5a00" />
+                </g>
+              </g>
+
+              <!-- Chậu hoa lớn đặt trước hiên nhà -->
+              <g class="flower-pot-sway">
+                <!-- Chậu gốm nung nâu cam -->
+                <polygon points="55,365 110,365 100,420 65,420" fill="#d27c52" stroke="#b56238" stroke-width="2" />
+                <rect x="50" y="358" width="65" height="9" rx="2" fill="#bc663c" />
+
+                <!-- Cành lá & Bông hoa hướng dương -->
+                <path d="M82,360 Q75,320 85,285" stroke="#588157" stroke-width="4" fill="none" />
+                <path d="M80,335 Q60,325 65,340 Z" fill="#6a994e" />
+                <path d="M83,310 Q105,300 95,315 Z" fill="#6a994e" />
+
+                <!-- Hoa hướng dương to vàng rực rỡ -->
+                <g transform="translate(85, 280)">
+                  <!-- Các cánh hoa vàng -->
+                  <circle cx="0" cy="0" r="22" fill="#ffb703" stroke="#fb8500" stroke-width="1" />
+                  <!-- Nhụy nâu tròn -->
+                  <circle cx="0" cy="0" r="10" fill="#582f0e" />
+                </g>
+
+                <!-- Bông hoa hồng / tulip bên cạnh -->
+                <path d="M92,360 Q105,330 102,305" stroke="#588157" stroke-width="3" fill="none" />
+                <g transform="translate(103, 300)">
+                  <path d="M-8,5 C-12,-10 0,-16 0,-5 C0,-16 12,-10 8,5 Z" fill="#ff4d6d" />
+                </g>
+              </g>
+
+              <!-- Mặt đất thềm tiệm hoa -->
+              <line x1="30" y1="418" x2="490" y2="418" stroke="#d5c4b1" stroke-width="3" stroke-linecap="round" />
+            </svg>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Dòng quote bài hát chạy bên dưới -->
+      <div class="bottom-lyrics-bar">
+        “<span class="lyrics-highlight">ĐI QUA BÃO GIÔNG</span>... Chạm chiếc chuông lay nhẹ... cánh cửa hé mở... Chào Bé Iu, bó hoa của Bé Iu đang chờ ♡”
+      </div>
+    </section>
+
+    <!-- ========================================================
+         STEP 2: BÉ IU CHỌN HOA (ANH GỬI YÊU THƯƠNG)
+         ======================================================== -->
+    <section id="scene-picker" class="scene-step">
+      <div class="flower-picker-wrapper">
+        
+        <div class="picker-header">
+          <h2 class="picker-title">
+            Bé Iu chọn hoa,<br>
+            Anh gửi <span class="script-accent">yêu thương</span>.
+          </h2>
+          <p class="picker-instructions">
+            Chạm từng bông hoa để đặt vào bó. Chọn đủ 8 bông để hoàn thành bó hoa của Bé Iu.
+          </p>
+        </div>
+
+        <div class="picker-workspace">
+          
+          <!-- Khay 5 loại hoa để chọn (Thiết kế chân thật, tinh xảo) -->
+          <div class="flower-stand-rack">
+            
+            <!-- Hoa 1: Tulip Hồng Chân Thật -->
+            <div class="flower-option-item" data-flower="tulip" title="Chọn hoa Tulip">
+              <svg class="flower-svg-stem" viewBox="0 0 80 180">
+                <defs>
+                  <linearGradient id="tulipStemGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#4d7c3b" />
+                    <stop offset="50%" stop-color="#70a359" />
+                    <stop offset="100%" stop-color="#3d632f" />
+                  </linearGradient>
+                  <linearGradient id="tulipPetalGrad1" x1="0%" y1="100%" x2="0%" y2="0%">
+                    <stop offset="0%" stop-color="#b5174e" />
+                    <stop offset="60%" stop-color="#e84379" />
+                    <stop offset="100%" stop-color="#ff758c" />
+                  </linearGradient>
+                  <linearGradient id="tulipPetalGrad2" x1="0%" y1="100%" x2="0%" y2="0%">
+                    <stop offset="0%" stop-color="#d90452" />
+                    <stop offset="70%" stop-color="#ff5983" />
+                    <stop offset="100%" stop-color="#ff99b0" />
+                  </linearGradient>
+                </defs>
+                <!-- Thân cành uốn lượn tự nhiên -->
+                <path d="M40,75 Q42,120 40,175" stroke="url(#tulipStemGrad)" stroke-width="4.5" fill="none" stroke-linecap="round" />
+                <!-- 2 Lá Tulip dài thon nhọn ôm thân -->
+                <path d="M40,140 Q15,100 24,70 Q35,95 40,125 Z" fill="#588e45" opacity="0.9" />
+                <path d="M40,120 Q65,85 58,55 Q46,80 40,105 Z" fill="#6ba356" opacity="0.95" />
+                <!-- Đài hoa xanh non -->
+                <path d="M34,75 Q40,82 46,75 L43,71 L37,71 Z" fill="#588e45" />
+                <!-- Búp hoa Tulip đa tầng chân thật -->
+                <!-- Cánh sau sẫm màu tạo chiều sâu -->
+                <path d="M30,73 C25,48 35,26 40,24 C45,26 55,48 50,73 Z" fill="url(#tulipPetalGrad1)" />
+                <!-- Cánh trái ôm cong mềm mại -->
+                <path d="M22,70 C16,42 26,26 36,36 C40,48 38,68 22,70 Z" fill="url(#tulipPetalGrad2)" />
+                <!-- Cánh phải ôm đan chéo cánh trái -->
+                <path d="M58,70 C64,42 54,26 44,36 C40,48 42,68 58,70 Z" fill="url(#tulipPetalGrad2)" />
+                <!-- Cánh giữa tròn đầy ở mặt trước -->
+                <path d="M28,72 C26,50 34,35 40,35 C46,35 54,50 52,72 C46,77 34,77 28,72 Z" fill="url(#tulipPetalGrad1)" />
+                <path d="M37,38 Q40,65 40,74" stroke="#ffccd5" stroke-width="1.2" fill="none" opacity="0.6" />
+              </svg>
+              <span class="flower-name-tag">Tulip</span>
+            </div>
+
+            <!-- Hoa 2: Hướng Dương Chân Thật -->
+            <div class="flower-option-item" data-flower="sunflower" title="Chọn hoa Hướng Dương">
+              <svg class="flower-svg-stem" viewBox="0 0 80 180">
+                <defs>
+                  <radialGradient id="sunCenterGrad" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stop-color="#3d1e03" />
+                    <stop offset="65%" stop-color="#582f0e" />
+                    <stop offset="85%" stop-color="#8a4f14" />
+                    <stop offset="100%" stop-color="#f4a261" />
+                  </radialGradient>
+                </defs>
+                <!-- Thân cành mập mạp khỏe khoắn -->
+                <path d="M40,65 Q39,120 40,175" stroke="#4d7c3b" stroke-width="5" fill="none" stroke-linecap="round" />
+                <!-- Lá to hình tim có gân lá -->
+                <path d="M39,135 Q10,120 18,95 Q38,105 39,125 Z" fill="#588e45" />
+                <path d="M39,115 Q68,100 60,75 Q42,88 39,105 Z" fill="#6ba356" />
+                <!-- Các cánh hoa hướng dương 2 tầng so le (Tầng sau cam vàng) -->
+                <g transform="translate(40, 42)">
+                  <!-- 12 Cánh tầng sau cam đậm -->
+                  <g fill="#fb8500" stroke="#d46b00" stroke-width="0.5">
+                    <polygon points="0,-34 -5,-16 5,-16" />
+                    <polygon points="17,-30 8,-14 16,-8" />
+                    <polygon points="30,-17 14,-8 16,8" />
+                    <polygon points="34,0 16,-5 16,5" />
+                    <polygon points="30,17 16,8 8,14" />
+                    <polygon points="17,30 8,14 -4,16" />
+                    <polygon points="0,34 -5,16 5,16" />
+                    <polygon points="-17,30 -8,14 4,16" />
+                    <polygon points="-30,17 -16,8 -8,14" />
+                    <polygon points="-34,0 -16,-5 -16,5" />
+                    <polygon points="-30,-17 -14,-8 -16,8" />
+                    <polygon points="-17,-30 -8,-14 -16,-8" />
+                  </g>
+                  <!-- 12 Cánh tầng trước vàng rực rỡ so le -->
+                  <g fill="#ffb703" stroke="#e09200" stroke-width="0.6">
+                    <polygon points="9,-32 0,-15 10,-15" />
+                    <polygon points="24,-24 10,-12 18,-4" />
+                    <polygon points="32,-9 15,-5 15,6" />
+                    <polygon points="32,9 15,-4 15,8" />
+                    <polygon points="24,24 6,12 16,5" />
+                    <polygon points="9,32 -2,15 8,15" />
+                    <polygon points="-9,32 0,15 -10,15" />
+                    <polygon points="-24,24 -10,12 -18,4" />
+                    <polygon points="-32,9 -15,4 -15,-8" />
+                    <polygon points="-32,-9 -15,-6 -15,5" />
+                    <polygon points="-24,-24 -6,-12 -16,-5" />
+                    <polygon points="-9,-32 2,-15 -8,-15" />
+                  </g>
+                  <!-- Nhụy hoa tròn lồi 3D màu nâu mật ong -->
+                  <circle cx="0" cy="0" r="14" fill="url(#sunCenterGrad)" />
+                  <!-- Hạt phấn hoa li ti tạo kết cấu thật -->
+                  <circle cx="-5" cy="-4" r="1.5" fill="#e9c46a" opacity="0.8" />
+                  <circle cx="4" cy="-5" r="1.5" fill="#e9c46a" opacity="0.8" />
+                  <circle cx="6" cy="3" r="1.5" fill="#e9c46a" opacity="0.8" />
+                  <circle cx="-3" cy="5" r="1.5" fill="#e9c46a" opacity="0.8" />
+                  <circle cx="0" cy="0" r="1.2" fill="#e9c46a" opacity="0.9" />
+                </g>
+              </svg>
+              <span class="flower-name-tag">Hướng dương</span>
+            </div>
+
+            <!-- Hoa 3: Hoa Hồng Nhung Đỏ Chân Thật -->
+            <div class="flower-option-item" data-flower="rose" title="Chọn Hoa Hồng">
+              <svg class="flower-svg-stem" viewBox="0 0 80 180">
+                <defs>
+                  <linearGradient id="roseRedGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+                    <stop offset="0%" stop-color="#800f2f" />
+                    <stop offset="60%" stop-color="#c9184a" />
+                    <stop offset="100%" stop-color="#ff4d6d" />
+                  </linearGradient>
+                </defs>
+                <!-- Thân cành có gai nhỏ -->
+                <path d="M40,68 Q41,120 40,175" stroke="#4d7c3b" stroke-width="4.2" fill="none" stroke-linecap="round" />
+                <!-- Gai hoa hồng -->
+                <path d="M40,110 Q45,112 47,116 Q43,115 40,113 Z" fill="#6b3a2a" />
+                <path d="M40,145 Q35,147 33,151 Q37,150 40,148 Z" fill="#6b3a2a" />
+                <!-- Lá hoa hồng viền răng cưa -->
+                <path d="M40,130 Q18,110 22,90 Q38,105 40,120 Z" fill="#4d7c3b" />
+                <path d="M40,105 Q62,88 58,70 Q45,85 40,98 Z" fill="#588e45" />
+                <!-- Bông Hoa Hồng Nở Rộ Nhiều Tầng Cánh -->
+                <g transform="translate(40, 42)">
+                  <!-- Tầng cánh ngoài cùng xòe rộng -->
+                  <path d="M0,26 C-18,26 -28,12 -25,-2 C-15,10 0,16 0,26 Z" fill="#a4161a" />
+                  <path d="M0,26 C18,26 28,12 25,-2 C15,10 0,16 0,26 Z" fill="#ba181b" />
+                  <path d="M-22,-4 C-26,-18 -10,-28 0,-22 C-12,-16 -16,-5 -22,-4 Z" fill="#c9184a" />
+                  <path d="M22,-4 C26,-18 10,-28 0,-22 C12,-16 16,-5 22,-4 Z" fill="#d90429" />
+                  <path d="M-15,-22 C0,-32 15,-22 18,-14 C8,-18 -8,-18 -15,-22 Z" fill="#e5383b" />
+                  <!-- Tầng cánh giữa uốn lượn -->
+                  <circle cx="0" cy="2" r="16" fill="url(#roseRedGrad)" />
+                  <!-- Tâm hoa cuộn xoắn ốc 3D đặc trưng hoa hồng -->
+                  <path d="M-8,0 C-10,-10 0,-14 8,-8 C14,-2 10,10 0,10 C-6,10 -10,4 -6,-2 C-2,-6 4,-4 4,0" fill="none" stroke="#fff0f3" stroke-width="2.2" stroke-linecap="round" />
+                  <circle cx="0" cy="0" r="3" fill="#ff758c" />
+                </g>
+              </svg>
+              <span class="flower-name-tag">Hoa hồng</span>
+            </div>
+
+            <!-- Hoa 4: Cúc Nhỏ Chân Thật -->
+            <div class="flower-option-item" data-flower="daisy" title="Chọn hoa Cúc Nhỏ">
+              <svg class="flower-svg-stem" viewBox="0 0 80 180">
+                <!-- Thân hoa thanh mảnh -->
+                <path d="M40,65 Q39,120 40,175" stroke="#4d7c3b" stroke-width="3.8" fill="none" stroke-linecap="round" />
+                <!-- Lá cúc nhỏ xẻ thùy -->
+                <path d="M40,125 Q22,112 28,95 Q38,108 40,118 Z" fill="#588e45" />
+                <path d="M40,105 Q58,92 52,78 Q42,90 40,100 Z" fill="#6ba356" />
+                <!-- Bông cúc trắng tỏa tròn 16 cánh quanh nhụy vàng -->
+                <g transform="translate(40, 42)">
+                  <!-- 16 Cánh hoa trắng muốt thuôn dài -->
+                  <g fill="#ffffff" stroke="#e0e0e0" stroke-width="0.8">
+                    <!-- Các cánh tỏa đều 360 độ -->
+                    <ellipse cx="0" cy="-22" rx="4" ry="11" />
+                    <ellipse cx="9" cy="-20" rx="4" ry="11" transform="rotate(22.5 9 -20)" />
+                    <ellipse cx="16" cy="-16" rx="4" ry="11" transform="rotate(45 16 -16)" />
+                    <ellipse cx="20" cy="-9" rx="4" ry="11" transform="rotate(67.5 20 -9)" />
+                    <ellipse cx="22" cy="0" rx="4" ry="11" transform="rotate(90 22 0)" />
+                    <ellipse cx="20" cy="9" rx="4" ry="11" transform="rotate(112.5 20 9)" />
+                    <ellipse cx="16" cy="16" rx="4" ry="11" transform="rotate(135 16 16)" />
+                    <ellipse cx="9" cy="20" rx="4" ry="11" transform="rotate(157.5 9 20)" />
+                    <ellipse cx="0" cy="22" rx="4" ry="11" />
+                    <ellipse cx="-9" cy="20" rx="4" ry="11" transform="rotate(-157.5 -9 20)" />
+                    <ellipse cx="-16" cy="16" rx="4" ry="11" transform="rotate(-135 -16 16)" />
+                    <ellipse cx="-20" cy="9" rx="4" ry="11" transform="rotate(-112.5 -20 9)" />
+                    <ellipse cx="-22" cy="0" rx="4" ry="11" transform="rotate(-90 -22 0)" />
+                    <ellipse cx="-20" cy="-9" rx="4" ry="11" transform="rotate(-67.5 -20 -9)" />
+                    <ellipse cx="-16" cy="-16" rx="4" ry="11" transform="rotate(-45 -16 -16)" />
+                    <ellipse cx="-9" cy="-20" rx="4" ry="11" transform="rotate(-22.5 -9 -20)" />
+                  </g>
+                  <!-- Nhụy cúc tròn vàng cam nổi hạt 3D -->
+                  <circle cx="0" cy="0" r="10.5" fill="#ffb703" stroke="#fb8500" stroke-width="1.2" />
+                  <circle cx="-3" cy="-3" r="1.5" fill="#e85d04" opacity="0.7" />
+                  <circle cx="3" cy="-2" r="1.5" fill="#e85d04" opacity="0.7" />
+                  <circle cx="1" cy="3" r="1.5" fill="#e85d04" opacity="0.7" />
+                  <circle cx="-2" cy="2" r="1.5" fill="#e85d04" opacity="0.7" />
+                </g>
+              </svg>
+              <span class="flower-name-tag">Cúc nhỏ</span>
+            </div>
+
+            <!-- Hoa 5: Baby Trắng Chân Thật (Bồng bềnh nhiều chùm hoa) -->
+            <div class="flower-option-item" data-flower="baby" title="Chọn hoa Baby Trắng">
+              <svg class="flower-svg-stem" viewBox="0 0 80 180">
+                <!-- Nhánh cây mảnh mai uốn lượn tự nhiên -->
+                <path d="M40,90 Q40,135 40,175" stroke="#6ba356" stroke-width="3" fill="none" stroke-linecap="round" />
+                <path d="M40,110 Q24,85 18,65" stroke="#6ba356" stroke-width="2" fill="none" stroke-linecap="round" />
+                <path d="M40,100 Q56,80 62,60" stroke="#6ba356" stroke-width="2" fill="none" stroke-linecap="round" />
+                <path d="M40,85 Q40,55 38,40" stroke="#6ba356" stroke-width="2" fill="none" stroke-linecap="round" />
+                <path d="M18,65 Q10,48 12,35" stroke="#79a868" stroke-width="1.5" fill="none" />
+                <path d="M18,65 Q26,52 28,40" stroke="#79a868" stroke-width="1.5" fill="none" />
+                <path d="M62,60 Q54,46 50,35" stroke="#79a868" stroke-width="1.5" fill="none" />
+                <path d="M62,60 Q70,48 68,36" stroke="#79a868" stroke-width="1.5" fill="none" />
+
+                <!-- Các chùm bông hoa Baby trắng xòe 5 cánh li ti -->
+                <!-- Nhóm chùm trái -->
+                <g fill="#ffffff" stroke="#dedede" stroke-width="0.6">
+                  <circle cx="12" cy="35" r="4.5" />
+                  <circle cx="8" cy="42" r="3.8" />
+                  <circle cx="16" cy="44" r="4" />
+                  <circle cx="28" cy="40" r="4.2" />
+                  <circle cx="24" cy="48" r="3.6" />
+                </g>
+                <circle cx="12" cy="35" r="1.2" fill="#d4af37" />
+                <circle cx="28" cy="40" r="1.2" fill="#d4af37" />
+
+                <!-- Nhóm chùm giữa -->
+                <g fill="#ffffff" stroke="#dedede" stroke-width="0.6">
+                  <circle cx="38" cy="38" r="4.8" />
+                  <circle cx="32" cy="30" r="4" />
+                  <circle cx="44" cy="28" r="4.2" />
+                  <circle cx="38" cy="22" r="4.5" />
+                </g>
+                <circle cx="38" cy="38" r="1.2" fill="#d4af37" />
+                <circle cx="38" cy="22" r="1.2" fill="#d4af37" />
+
+                <!-- Nhóm chùm phải -->
+                <g fill="#ffffff" stroke="#dedede" stroke-width="0.6">
+                  <circle cx="50" cy="35" r="4.5" />
+                  <circle cx="56" cy="42" r="3.8" />
+                  <circle cx="68" cy="36" r="4.5" />
+                  <circle cx="72" cy="45" r="3.8" />
+                  <circle cx="62" cy="50" r="4.2" />
+                </g>
+                <circle cx="50" cy="35" r="1.2" fill="#d4af37" />
+                <circle cx="68" cy="36" r="1.2" fill="#d4af37" />
+              </svg>
+              <span class="flower-name-tag">Baby trắng</span>
+            </div>
+
+          </div>
+
+          <!-- Bó hoa đang gói chờ nhận hoa -->
+          <div class="bouquet-stand-zone">
+            <p class="bouquet-stand-title">
+              Bó hoa của Bé Iu đang chờ những điều dịu dàng.
+            </p>
+
+            <div id="target-bouquet-box" class="empty-bouquet-wrapper">
+              <svg id="picker-bouquet-svg" viewBox="0 0 300 380" width="100%" height="100%">
+                <defs>
+                  <linearGradient id="kraftBackGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#faedd2" />
+                    <stop offset="60%" stop-color="#f5dfad" />
+                    <stop offset="100%" stop-color="#ebd19a" />
+                  </linearGradient>
+                  <linearGradient id="kraftFrontGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#fdf4e3" />
+                    <stop offset="50%" stop-color="#f6e1b3" />
+                    <stop offset="100%" stop-color="#e9ce98" />
+                  </linearGradient>
+                  <linearGradient id="kraftSkirtGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#f5dfad" />
+                    <stop offset="100%" stop-color="#dfbe7e" />
+                  </linearGradient>
+                </defs>
+
+                <!-- LỚP 1: GIẤY GÓI NỀN PHÍA SAU -->
+                <g id="picker-back-wrapper">
+                  <path d="M30,145 C28,115 60,95 95,85 C125,75 160,78 195,82 C230,90 260,108 270,140 C274,152 268,165 268,165 L168,265 L132,265 L32,165 Z"
+                        fill="url(#kraftBackGrad2)" stroke="#dab774" stroke-width="2" />
+                  <path d="M50,150 Q150,185 250,150 L168,265 L132,265 Z" fill="#e2c185" opacity="0.3" />
+                </g>
+
+                <!-- LỚP 2: TẤT CẢ CÀNH XANH, LÁ & BÔNG HOA ĐƯỢC CHỌN SẼ NỞ RỘ VÀO ĐÂY -->
+                <g id="picker-bouquet-stems"></g>
+
+                <!-- LỚP 3: VẠT GIẤY GÓI MẶT TRƯỚC (HỞ V-COLLAR ĐỂ LỘ TOÀN BỘ CÀNH & LÁ) -->
+                <g id="picker-front-paper-cone">
+                  <path d="M32,165 Q85,208 150,228 Q215,208 268,165 L168,265 L132,265 Z"
+                        fill="url(#kraftFrontGrad2)" stroke="#dab774" stroke-width="2" />
+                  <path d="M32,165 Q85,208 150,228 Q215,208 268,165 Q215,195 150,215 Q85,195 32,165 Z"
+                        fill="#faeed4" stroke="#e0c184" stroke-width="1.2" />
+                  <path d="M50,185 L150,228 L132,265 Z" fill="#edd098" opacity="0.4" />
+                  <path d="M250,185 L150,228 L168,265 Z" fill="#dfbe7d" opacity="0.5" />
+                </g>
+
+                <!-- LỚP 4: TAY CẦM & CHIẾC NƠ HỒNG Ở EO -->
+                <g id="picker-bow-and-skirt">
+                  <polygon points="135,268 165,268 178,335 122,335" fill="url(#kraftSkirtGrad2)" stroke="#d9b674" stroke-width="2" />
+                  <path d="M135,268 L150,335 L122,335 Z" fill="#e5c589" opacity="0.5" />
+
+                  <path d="M128,265 Q110,245 95,260 Q115,272 128,265 Z" fill="#faedd2" stroke="#dab978" stroke-width="1.5" />
+                  <path d="M172,265 Q190,245 205,260 Q185,272 172,265 Z" fill="#faedd2" stroke="#dab978" stroke-width="1.5" />
+
+                  <!-- Chiếc nơ màu hồng cánh sen -->
+                  <g transform="translate(150, 266)">
+                    <path d="M0,0 C-26,-20 -28,12 0,0 Z" fill="#e11d48" stroke="#be123c" stroke-width="0.8" />
+                    <path d="M-2,-2 C-18,-14 -20,6 -2,-2 Z" fill="#fb7185" opacity="0.6" />
+                    <path d="M0,0 C26,-20 28,12 0,0 Z" fill="#e11d48" stroke="#be123c" stroke-width="0.8" />
+                    <path d="M2,-2 C18,-14 20,6 2,-2 Z" fill="#fb7185" opacity="0.6" />
+                    <path d="M-3,3 Q-14,28 -22,42" stroke="#e11d48" stroke-width="5" fill="none" stroke-linecap="round" />
+                    <path d="M3,3 Q14,28 22,42" stroke="#e11d48" stroke-width="5" fill="none" stroke-linecap="round" />
+                    <circle cx="0" cy="0" r="7.5" fill="#f43f5e" stroke="#be123c" stroke-width="1" />
+                    <circle cx="-2" cy="-2" r="2.2" fill="#fda4af" />
+                  </g>
+                </g>
+              </svg>
+            </div>
+
+            <!-- Bộ đếm số bông hoa -->
+            <div class="flower-count-badge">
+              <span id="flower-counter-num">0</span> / 8 BÔNG HOA
+            </div>
+          </div>
+
+        </div>
+
+        <div class="bottom-lyrics-bar">
+          “<span class="lyrics-highlight">NHỮNG TÂM TƯ BỦA VÂY</span>, NGƯỜI ĐÃ VÌ ANH MÀ ÔM LẤY...”
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================
+         STEP 3: THẮT MỘT CHIẾC NƠ (GỬI TRỌN YÊU THƯƠNG)
+         ======================================================== -->
+    <section id="scene-ribbon" class="scene-step">
+      <div class="ribbon-step-wrapper">
+        <h2 class="ribbon-title">
+          Thắt một chiếc nơ,<br>
+          gửi trọn <span class="script-accent">yêu thương</span>.
+        </h2>
+
+        <!-- Bó hoa 8 bông rực rỡ chuẩn xác 100% theo ảnh mẫu TikTok -->
+        <div class="full-bouquet-preview">
+          <svg viewBox="0 0 300 380" width="100%" height="100%">
+            <defs>
+              <linearGradient id="kraftBackGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#faedd2" />
+                <stop offset="60%" stop-color="#f5dfad" />
+                <stop offset="100%" stop-color="#ebd19a" />
+              </linearGradient>
+              <linearGradient id="kraftFrontGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#fdf4e3" />
+                <stop offset="50%" stop-color="#f6e1b3" />
+                <stop offset="100%" stop-color="#e9ce98" />
+              </linearGradient>
+              <linearGradient id="kraftSkirtGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#f5dfad" />
+                <stop offset="100%" stop-color="#dfbe7e" />
+              </linearGradient>
+            </defs>
+
+            <!-- LỚP 1: GIẤY GÓI NỀN PHÍA SAU -->
+            <g id="preview-back-wrapper-3">
+              <path d="M30,145 C28,115 60,95 95,85 C125,75 160,78 195,82 C230,90 260,108 270,140 C274,152 268,165 268,165 L168,265 L132,265 L32,165 Z"
+                    fill="url(#kraftBackGrad3)" stroke="#dab774" stroke-width="2" />
+              <path d="M50,150 Q150,185 250,150 L168,265 L132,265 Z" fill="#e2c185" opacity="0.3" />
+            </g>
+
+            <!-- LỚP 2: TẤT CẢ CÀNH XANH, LÁ & BÔNG HOA THEO ĐÚNG CÁC LOẠI HOA BÉ IU ĐÃ CHỌN -->
+            <g id="ribbon-bouquet-stems-container"></g>
+
+            <!-- LỚP 4: GIẤY GÓI PHÍA TRƯỚC (VẠT CỔ ÁO V-SHAPE HỞ ĐỂ LỘ TOÀN BỘ CÀNH & LÁ) -->
+            <g id="preview-front-paper-cone-3">
+              <!-- Thân giấy gói mặt trước thấp hình nón ôm từ eo y=265 lên miệng y=228 -->
+              <path d="M32,165 Q85,208 150,228 Q215,208 268,165 L168,265 L132,265 Z"
+                    fill="url(#kraftFrontGrad3)" stroke="#dab774" stroke-width="2" />
+
+              <!-- Vạt viền gấp cổ áo kiểu Origami màu kem sáng như mẫu TikTok -->
+              <path d="M32,165 Q85,208 150,228 Q215,208 268,165 Q215,195 150,215 Q85,195 32,165 Z"
+                    fill="#faeed4" stroke="#e0c184" stroke-width="1.2" />
+
+              <!-- Nếp gấp vạt chéo tạo khối 3D sống động -->
+              <path d="M50,185 L150,228 L132,265 Z" fill="#edd098" opacity="0.4" />
+              <path d="M250,185 L150,228 L168,265 Z" fill="#dfbe7d" opacity="0.5" />
+            </g>
+
+            <!-- LỚP 5: TAY CẦM PHÍA DƯỚI & CHIẾC NƠ HỒNG THẮT Ở EO -->
+            <g id="preview-bow-and-skirt-3">
+              <!-- Đuôi giấy gói bên dưới chiếc nơ (tay cầm bó hoa) -->
+              <polygon points="135,268 165,268 178,335 122,335" fill="url(#kraftSkirtGrad3)" stroke="#d9b674" stroke-width="2" />
+              <!-- Nếp gấp bóng đổ ở tay cầm -->
+              <path d="M135,268 L150,335 L122,335 Z" fill="#e5c589" opacity="0.5" />
+
+              <!-- 2 Cánh tai giấy gói xòe nhẹ sau chiếc nơ -->
+              <path d="M128,265 Q110,245 95,260 Q115,272 128,265 Z" fill="#faedd2" stroke="#dab978" stroke-width="1.5" />
+              <path d="M172,265 Q190,245 205,260 Q185,272 172,265 Z" fill="#faedd2" stroke="#dab978" stroke-width="1.5" />
+
+              <!-- Chiếc nơ màu hồng cánh sen thắt ở eo (y=266) -->
+              <g transform="translate(150, 266)">
+                <!-- Cánh nơ trái -->
+                <path d="M0,0 C-26,-20 -28,12 0,0 Z" fill="#e11d48" stroke="#be123c" stroke-width="0.8" />
+                <path d="M-2,-2 C-18,-14 -20,6 -2,-2 Z" fill="#fb7185" opacity="0.6" />
+                <!-- Cánh nơ phải -->
+                <path d="M0,0 C26,-20 28,12 0,0 Z" fill="#e11d48" stroke="#be123c" stroke-width="0.8" />
+                <path d="M2,-2 C18,-14 20,6 2,-2 Z" fill="#fb7185" opacity="0.6" />
+                <!-- Dải ruy băng trái -->
+                <path d="M-3,3 Q-14,28 -22,42" stroke="#e11d48" stroke-width="5" fill="none" stroke-linecap="round" />
+                <!-- Dải ruy băng phải -->
+                <path d="M3,3 Q14,28 22,42" stroke="#e11d48" stroke-width="5" fill="none" stroke-linecap="round" />
+                <!-- Tâm nơ tròn -->
+                <circle cx="0" cy="0" r="7.5" fill="#f43f5e" stroke="#be123c" stroke-width="1" />
+                <circle cx="-2" cy="-2" r="2.2" fill="#fda4af" />
+              </g>
+            </g>
+          </svg>
+        </div>
+
+        <button id="btn-tie-ribbon" class="interactive-ribbon-btn">
+          🎀 Chạm vào dải ruy băng để hoàn thành bó hoa
+        </button>
+
+        <div class="bottom-lyrics-bar">
+          “<span class="lyrics-highlight">VÀ GIỜ THÌ CẢ THẾ GIỚI CỦA ANH ĐANG Ở ĐÂY</span>...”
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         STEP 4: BÓ HOA HOÀN THIỆN & CHIẾC THIỆP CÓ ẢNH NGƯỜI YÊU
+         ======================================================== -->
+    <section id="scene-final" class="scene-step">
+      <div class="final-step-wrapper">
+        <h2 class="final-title">
+          Một bó hoa,<br>
+          cho người Anh <span class="script-accent">thương nhất</span>.
+        </h2>
+
+        <div class="final-center-display">
+          
+          <!-- Bó hoa hoàn thiện chuẩn xác 100% theo ảnh mẫu TikTok cạnh thiệp -->
+          <div class="finished-bouquet-card">
+            <svg viewBox="0 0 300 380" width="100%" height="100%">
+              <defs>
+                <linearGradient id="kraftBackGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#faedd2" />
+                  <stop offset="60%" stop-color="#f5dfad" />
+                  <stop offset="100%" stop-color="#ebd19a" />
+                </linearGradient>
+                <linearGradient id="kraftFrontGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#fdf4e3" />
+                  <stop offset="50%" stop-color="#f6e1b3" />
+                  <stop offset="100%" stop-color="#e9ce98" />
+                </linearGradient>
+                <linearGradient id="kraftSkirtGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#f5dfad" />
+                  <stop offset="100%" stop-color="#dfbe7e" />
+                </linearGradient>
+              </defs>
+
+              <!-- LỚP 1: GIẤY GÓI NỀN PHÍA SAU -->
+              <g id="preview-back-wrapper-4">
+                <path d="M30,145 C28,115 60,95 95,85 C125,75 160,78 195,82 C230,90 260,108 270,140 C274,152 268,165 268,165 L168,265 L132,265 L32,165 Z"
+                      fill="url(#kraftBackGrad4)" stroke="#dab774" stroke-width="2" />
+                <path d="M50,150 Q150,185 250,150 L168,265 L132,265 Z" fill="#e2c185" opacity="0.3" />
+              </g>
+
+              <!-- LỚP 2: TẤT CẢ CÀNH XANH, LÁ & BÔNG HOA THEO ĐÚNG CÁC LOẠI HOA BÉ IU ĐÃ CHỌN -->
+              <g id="final-bouquet-stems-container"></g>
+
+              <!-- LỚP 4: GIẤY GÓI PHÍA TRƯỚC (VẠT CỔ ÁO V-SHAPE HỞ ĐỂ LỘ TOÀN BỘ CÀNH & LÁ) -->
+              <g id="preview-front-paper-cone-4">
+                <!-- Thân giấy gói mặt trước thấp hình nón ôm từ eo y=265 lên miệng y=228 -->
+                <path d="M32,165 Q85,208 150,228 Q215,208 268,165 L168,265 L132,265 Z"
+                      fill="url(#kraftFrontGrad4)" stroke="#dab774" stroke-width="2" />
+
+                <!-- Vạt viền gấp cổ áo kiểu Origami màu kem sáng như mẫu TikTok -->
+                <path d="M32,165 Q85,208 150,228 Q215,208 268,165 Q215,195 150,215 Q85,195 32,165 Z"
+                      fill="#faeed4" stroke="#e0c184" stroke-width="1.2" />
+
+                <!-- Nếp gấp vạt chéo tạo khối 3D sống động -->
+                <path d="M50,185 L150,228 L132,265 Z" fill="#edd098" opacity="0.4" />
+                <path d="M250,185 L150,228 L168,265 Z" fill="#dfbe7d" opacity="0.5" />
+              </g>
+
+              <!-- LỚP 5: TAY CẦM PHÍA DƯỚI & CHIẾC NƠ HỒNG THẮT Ở EO -->
+              <g id="preview-bow-and-skirt-4">
+                <!-- Đuôi giấy gói bên dưới chiếc nơ (tay cầm bó hoa) -->
+                <polygon points="135,268 165,268 178,335 122,335" fill="url(#kraftSkirtGrad4)" stroke="#d9b674" stroke-width="2" />
+                <!-- Nếp gấp bóng đổ ở tay cầm -->
+                <path d="M135,268 L150,335 L122,335 Z" fill="#e5c589" opacity="0.5" />
+
+                <!-- 2 Cánh tai giấy gói xòe nhẹ sau chiếc nơ -->
+                <path d="M128,265 Q110,245 95,260 Q115,272 128,265 Z" fill="#faedd2" stroke="#dab978" stroke-width="1.5" />
+                <path d="M172,265 Q190,245 205,260 Q185,272 172,265 Z" fill="#faedd2" stroke="#dab978" stroke-width="1.5" />
+
+                <!-- Chiếc nơ màu hồng cánh sen thắt ở eo (y=266) -->
+                <g transform="translate(150, 266)">
+                  <!-- Cánh nơ trái -->
+                  <path d="M0,0 C-26,-20 -28,12 0,0 Z" fill="#e11d48" stroke="#be123c" stroke-width="0.8" />
+                  <path d="M-2,-2 C-18,-14 -20,6 -2,-2 Z" fill="#fb7185" opacity="0.6" />
+                  <!-- Cánh nơ phải -->
+                  <path d="M0,0 C26,-20 28,12 0,0 Z" fill="#e11d48" stroke="#be123c" stroke-width="0.8" />
+                  <path d="M2,-2 C18,-14 20,6 2,-2 Z" fill="#fb7185" opacity="0.6" />
+                  <!-- Dải ruy băng trái -->
+                  <path d="M-3,3 Q-14,28 -22,42" stroke="#e11d48" stroke-width="5" fill="none" stroke-linecap="round" />
+                  <!-- Dải ruy băng phải -->
+                  <path d="M3,3 Q14,28 22,42" stroke="#e11d48" stroke-width="5" fill="none" stroke-linecap="round" />
+                  <!-- Tâm nơ tròn -->
+                  <circle cx="0" cy="0" r="7.5" fill="#f43f5e" stroke="#be123c" stroke-width="1" />
+                  <circle cx="-2" cy="-2" r="2.2" fill="#fda4af" />
+                </g>
+              </g>
+            </svg>
+          </div>
+
+          <!-- Chiếc thiệp tình yêu theo đúng mẫu TikTok (Ảnh vuông/chữ nhật Polaroid + nội dung thư) -->
+          <div class="love-card-wrapper">
+            <!-- Khung ảnh Polaroid vuông/chữ nhật của người yêu -->
+            <div id="card-polaroid-frame" class="card-polaroid-frame" title="Nhấp để xem ảnh to đầy đủ">
+              <div class="polaroid-photo">
+                <img id="card-lover-img" src="assets/images/avatar.jpg" alt="Bé Iu của Anh">
+              </div>
+              <p class="polaroid-caption">Người anh luôn muốn<br>yêu thương ♡</p>
+            </div>
+
+            <h3 class="card-dear-title">Gửi Bé Iu của Anh,</h3>
+
+            <div class="card-letter-body">
+              <p>Chúc mừng sinh nhật em, người anh thương!</p>
+              <p>Anh muốn tặng em một bó hoa thật đặc biệt. Mỗi bông là một điều anh mong cho em: bình an, niềm vui, những ước mơ thành hiện thực và thật nhiều yêu thương.</p>
+              <p>Cảm ơn em vì những quan tâm nhỏ bé, những lần lắng nghe và nụ cười khiến anh thấy một ngày bình thường cũng trở nên đáng nhớ.</p>
+              <p>Tuổi mới, em cứ tự tin làm những điều mình thích nhé. Có ngày nào mệt thì nghỉ một chút, đừng quên dành sự dịu dàng cho chính mình.</p>
+              <p>Nếu hôm nay có ai đó hỏi anh ước điều gì, anh chỉ ước cho em một sinh nhật thật vui, một tuổi mới bình an, và thật nhiều ngày sau vẫn được ở bên em.</p>
+              <p>Anh yêu em rất nhiều. ♡</p>
+            </div>
+
+            <div class="card-signature">
+              Thương Bé Iu,
+            </div>
+          </div>
+
+        </div>
+
+        <div class="bottom-lyrics-bar" style="margin-top: 50px;">
+          “<span class="lyrics-highlight">LÀ NGƯỜI CON GÁI ĐỨNG TRƯỚC MẮT ANH LÚC NÀY</span> ♡”
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Lightbox xem full tấm hình khi chạm vào ảnh -->
+  <div id="image-lightbox-modal" class="image-lightbox-overlay">
+    <div class="image-lightbox-content">
+      <button id="btn-close-lightbox" class="btn-close-lightbox" title="Đóng">&times;</button>
+      <img src="assets/images/avatar.jpg" alt="Ảnh trọn vẹn của Bé Iu" class="lightbox-full-img">
+      <p class="lightbox-caption">Người anh luôn muốn yêu thương ♡</p>
+    </div>
+  </div>
+
+  <!-- JavaScript chính -->
+  <script src="js/script.js"></script>
+</body>
+</html>
+
